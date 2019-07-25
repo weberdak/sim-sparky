@@ -119,23 +119,23 @@ def parse_args():
     )
     parser.add_argument(
         '--nuc1_sw', type=float,
-        help='Spectral width of nucleus 1 in PPM. Default: 4.00.',
-        default=4.00
+        help='Spectral width of nucleus 1 in PPM. Default: 8.00.',
+        default=8.00
     )
     parser.add_argument(
         '--nuc2_sw', type=float,
-        help='Spectral width of nucleus 1 in PPM. Default: 20.00.',
-        default=20.00
+        help='Spectral width of nucleus 1 in PPM. Default: 40.00.',
+        default=40.00
     )
     parser.add_argument(
         '--nuc1_size', type=int,
-        help='Number of points in nucleus 1 dimension. Default: 4096.',
-        default=4096
+        help='Number of points in nucleus 1 dimension. Default: 1024.',
+        default=1024
     )
     parser.add_argument(
         '--nuc2_size', type=int,
-        help='Number of points in nucleus 2 dimension. Default: 4096.',
-        default=4096
+        help='Number of points in nucleus 2 dimension. Default: 1024.',
+        default=1024
     )
     args = parser.parse_args()
     return args
