@@ -189,20 +189,22 @@ def main():
     fo.write('      Assignment         w1         w2  \n\n')
     num_intra = 0
     for r_id in data_shifts.keys():
-        
-        # Iterate through intra-residue correlations
-        for c in intra_corr:
-            try:
-                shift1 = str(data_shifts[r_id][c[0]])
-                shift1 = shift1.rjust(11,' ')
-                shift2 = str(data_shifts[r_id][c[1]])
-                shift2 = shift2.rjust(11,' ')
-                assignment = data_rnames[r_id]+str(r_id)+c[1]+'-'+c[0]
-                assignment = assignment.rjust(17)
-                fo.write('{}{}{}\n'.format(assignment,shift2,shift1))
-                num_intra += 1
-            except KeyError:
-                pass
+        for s in inter_corr:
+            for c in intra_corr:
+                try:
+                    shift1 = str(data_shifts[r_id][c[0]])
+                    shift1 = shift1.rjust(11,' ')
+                    shift2 = str(data_shifts[r_id+s][c[1]])
+                    shift2 = shift2.rjust(11,' ')
+                    if s == 0:
+                        assignment = data_rnames[r_id]+str(r_id)+c[1]+'-'+c[0]
+                    else:
+                        assignment = data_rnames[r_id]+str(r_id+s)+c[1]+'-'+str(r_id)+c[0]
+                    assignment = assignment.rjust(17)
+                    fo.write('{}{}{}\n'.format(assignment,shift2,shift1))
+                    num_intra += 1
+                except KeyError:
+                    pass
     fo.close()
     print('List of {} peaks output to {}.list.'.format(num_intra,out_prefix))
     # Iterate through inter-residue connections
