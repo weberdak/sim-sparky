@@ -66,7 +66,7 @@ Simply download and copy the [sim_sparky.py](sim_sparky.py) script into a workin
 
 The following examples use the [GB1_BMRB30088_CSV.dat](examples/GB1_BMRB30088_CSV.dat) as the input file. These are the chemical shifts of GB1 deposited in the [BMRB database](http://www.bmrb.wisc.edu/data_library/summary/?bmrbId=30088) extracted and organized into a tab-delimited (TSV) text file (CSV also acceptable). This can be done by simply copying data from NMR-STAR files into MS Excel or LibreOffice Calc, then copying the required columns into a text file. Later versions of this code will allow direct reading of NMR-STAR files.
 
-#### 1H-15N HSQC spectrum
+### 1H-15N HSQC spectrum
 
 The following run by copying the [gb1_hsqc.sh](examples/sim_hsqc.sh) bash script into the working directory and running in a terminal:
 
@@ -97,10 +97,10 @@ or copying the following into the terminal:
 	<img src="examples/gb1_hsqc_cropped.jpg" width="1000">
 </figure>
 
-#### NCA spectrum
+### NCA spectrum
 
 In progess.
 
-#### DARR spectrum
+### DARR spectrum
 
 In progress.
