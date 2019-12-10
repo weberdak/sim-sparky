@@ -6,8 +6,7 @@ import sys
 # Simulate 2D NMR spectra in SPARKY format from a peak list file.
 #
 # Written by: Daniel K. Weber
-# Affiliation: University of Minnesota, MN, USA
-# Funding sources: NIH R01GM064742 and NIH R01HL144130 (Gianluigi Veglia). AHA 19POST34420009 (DW).
+# Affiliation: University of Minnesota, MN, USA (Veglia Lab)
 
 
 def residue_letter(resname):
