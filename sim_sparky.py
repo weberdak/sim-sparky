@@ -137,6 +137,16 @@ def parse_args():
         help='Number of points in nucleus 2 dimension. Default: 1024.',
         default=1024
     )
+    parser.add_argument(
+        '--nuc1_lw', type=int,
+        help='Peak linewidths in dimension of nucleus 1 in Hz. Default: 20.',
+        default=20
+    )
+    parser.add_argument(
+        '--nuc2_lw', type=int,
+        help='Peak linewidths in dimension of nucleus 2 in Hz. Default: 20.',
+        default=20
+    )
     args = parser.parse_args()
     return args
 
@@ -160,6 +170,8 @@ def main():
     nuc2_sw = args.nuc2_sw
     nuc1_size = args.nuc1_size
     nuc2_size = args.nuc2_size
+    nuc1_lw = args.nuc1_lw
+    nuc2_lw = args.nuc2_lw
     
     # Read in data from specified file format
     if file_type == 'csv':
@@ -250,8 +262,6 @@ def main():
     uc_nuc2 = ng.sparky.make_uc(dic, None, 0)
     uc_nuc1 = ng.sparky.make_uc(dic, None, 1)
 
-    nuc1_lw = 20
-    nuc2_lw = 20
     lw_nuc1 = (nuc1_lw/nuc1_sw_hz)*nuc1_size    # Nuc1 dimension linewidth in points
     lw_nuc2 = (nuc2_lw/nuc2_sw_hz)*nuc2_size    # Nuc2 dimension linewidth in points
 
