@@ -99,8 +99,14 @@ or copying the following into the terminal:
 
 ### NCO spectrum
 
-	python $SIMSPARKY/sim_sparky.py \
-       -i GB1_BMRB30088_CSV.dat \
+This example produces an NCO spectrum by correlating the carbonyl carbon with the nitrogen of the  i+1 residue. Note that inter-residue correlations are handled by the "-s" flag. Either run the [gb1_nco.sh](examples/gb1_nco.sh) script by:
+
+	bash gb1_nco.sh
+
+or copy the following into the terminal:
+
+	python sim_sparky.py \
+       	-i GB1_BMRB30088_CSV.dat \
        -o gb1_nco \
        -t csv \
        -c C N \
@@ -109,18 +115,77 @@ or copying the following into the terminal:
        --nuc2_label 15N \
        --nuc1_freq 150.903 \
        --nuc2_freq 60.834 \
-       --nuc1_center 175.0 \
+       --nuc1_center 175.00 \
        --nuc2_center 120.00 \
        --nuc1_sw 20.00 \
        --nuc2_sw 40.00 \
        --nuc1_size 1024 \
        --nuc2_size 1024
        
+This produces the [gb1_nco.list](examples/gb1_nco.list) peaklist file and the [gb1_nco.ucsf](examples/gb1_nco.ucsf) spectrum:
 
  <figure>
 	<img src="examples/gb1_nco_cropped.jpg" width="600">
 </figure>
 
+### NCA spectrum
+
+An example of simulating an NCA spectrum. Either run the [gb1_nca.sh](examples/gb1_nca.sh) script by:
+
+	bash gb1_nca.sh
+
+or copy the following into the terminal:
+
+	python sim_sparky.py \
+       -i GB1_BMRB30088_CSV.dat \
+       -o gb1_nca \
+       -t csv \
+       -c CA N \
+       -s 0 \
+       --nuc1_label 13C \
+       --nuc2_label 15N \
+       --nuc1_freq 150.903 \
+       --nuc2_freq 60.834 \
+       --nuc1_center 57.50 \
+       --nuc2_center 120.00 \
+       --nuc1_sw 40.00 \
+       --nuc2_sw 40.00 \
+       --nuc1_size 1024 \
+       --nuc2_size 1024
+
+This produces the [gb1_nca.list](examples/gb1_nca.list) peaklist file and the [gb1_nca.ucsf](examples/gb1_nca.ucsf) spectrum:
+
+ <figure>
+	<img src="examples/gb1_nca_cropped.jpg" width="600">
+</figure>
+
 ### DARR spectrum
 
-In progress.
+The following produces a DARR spectrum of intra-residue correlations. Note that the reverse correlations are also specified with the "-c" flag so the cross-peaks are placed on both sides of the diagonal. Either run the [gb1_darr.sh](examples/gb1_darr.sh) script by:
+
+	bash gb1_darr.sh
+
+or copy the following into the terminal:
+
+	python sim_sparky.py \
+       -i GB1_BMRB30088_CSV.dat \
+       -o gb1_darr \
+       -t csv \
+       -c C CA C CB CA CB CA C CB C CB CA C C CA CA CB CB \
+       -s 0 \
+       --nuc1_label 13C \
+       --nuc2_label 13C \
+       --nuc1_freq 150.903 \
+       --nuc2_freq 150.903 \
+       --nuc1_center 100.00 \
+       --nuc2_center 100.00 \
+       --nuc1_sw 200.00 \
+       --nuc2_sw 200.00 \
+       --nuc1_size 1024 \
+       --nuc2_size 1024
+
+This produces the [gb1_darr.list](examples/gb1_nca.list) peaklist file and the [gb1_darr.ucsf](examples/gb1_nca.ucsf) spectrum:
+
+ <figure>
+	<img src="examples/gb1_darr_cropped.jpg" width="1200">
+</figure>
