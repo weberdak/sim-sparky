@@ -107,7 +107,7 @@ This example produces an NCO spectrum by correlating the carbonyl carbon with th
 or copy the following into the terminal:
 
 	python sim_sparky.py \
-       	-i GB1_BMRB30088_CSV.dat \
+       -i GB1_BMRB30088_CSV.dat \
        -o gb1_nco \
        -t csv \
        -c C N \
@@ -190,3 +190,35 @@ This produces the [gb1_darr.list](examples/gb1_nca.list) peaklist file and the [
  <figure>
 	<img src="examples/gb1_darr_cropped.jpg" width="1200">
 </figure>
+
+More intra-residue correlations can be simulated by the following (contributed by Rashik Ahmed, McMaster University):
+
+	python sim_sparky.py \
+       -i GB1_BMRB30088_CSV.dat \
+       -o gb1_darr \
+       -t csv \
+       -c -c C CA CA C CA CB CB CA CB CG CG CB CB CG1 CG1 CB CB CG2 CG2 CB CG CD1 CD1 CG CG CD2 CD2 CG CG CD CD CG CG1 CD CD CG1 CD1 CE1 CE1 CD1 CD2 CE2 CE2 CD2 CD CE CE CD C C CA CA CB CB CG CG CG1 CG1 CG2 CG2 CD CD CD1 CD1 CD2 CD2 CE CE CE1 CE1 CE2 CE2 \
+       -s 0 \
+       -s 0 \
+       --nuc1_label 13C \
+       --nuc2_label 13C \
+       --nuc1_freq 150.903 \
+       --nuc2_freq 150.903 \
+       --nuc1_center 100.00 \
+       --nuc2_center 100.00 \
+       --nuc1_sw 200.00 \
+       --nuc2_sw 200.00 \
+       --nuc1_size 1024 \
+       --nuc2_size 1024
+
+
+## Funding sources
+
+National Institutes of Health: 
+
+* R01 GM 064742 (Gianluigi Veglia)
+* R01 HL 144130 (Gianluigi Veglia)
+
+American Heart Association:
+
+* 19POST34420009 (Daniel K. Weber)
