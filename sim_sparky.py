@@ -210,7 +210,7 @@ def main():
                     if s == 0:
                         assignment = data_rnames[r_id]+str(r_id)+c[1]+'-'+c[0]
                     else:
-                        assignment = data_rnames[r_id]+str(r_id+s)+c[1]+'-'+str(r_id)+c[0]
+                        assignment = data_rnames[r_id+s]+str(r_id+s)+c[1]+'-'+data_rnames[r_id]+str(r_id)+c[0]
                     assignment = assignment.rjust(17)
                     fo.write('{}{}{}\n'.format(assignment,shift2,shift1))
                     num_intra += 1
