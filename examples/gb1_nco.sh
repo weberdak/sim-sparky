@@ -2,7 +2,7 @@
 
 SIMSPARKY=/home/daniel/GitHub/sim-sparky
 
-python $SIMSPARKY/sim_sparky.py \
+python3 $SIMSPARKY/sim_sparky.py \
        -i GB1_BMRB30088_CSV.dat \
        -o gb1_nco \
        -t csv \

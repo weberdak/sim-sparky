@@ -191,14 +191,13 @@ This produces the [gb1_darr.list](examples/gb1_nca.list) peaklist file and the [
 	<img src="examples/gb1_darr_cropped.jpg" width="1200">
 </figure>
 
-More intra-residue correlations can be simulated by the following (contributed by Rashik Ahmed, McMaster University):
+More intra-residue correlations can be simulated by the following ([gb1_darr_allIntra.sh](examples/gb1_darr_allIntra.sh) contributed by Rashik Ahmed, McMaster University):
 
 	python sim_sparky.py \
 	   -i GB1_BMRB30088_CSV.dat \
 	   -o gb1_darr \
 	   -t csv \
-	   -c -c C CA CA C CA CB CB CA CB CG CG CB CB CG1 CG1 CB CB CG2 CG2 CB CG CD1 CD1 CG CG CD2 CD2 CG CG CD CD CG CG1 CD CD CG1 CD1 CE1 CE1 CD1 CD2 CE2 CE2 CD2 CD CE CE CD C C CA CA CB CB CG CG CG1 CG1 CG2 CG2 CD CD CD1 CD1 CD2 CD2 CE CE CE1 CE1 CE2 CE2 \
-	   -s 0 \
+	   -c C CA CA C CA CB CB CA CB CG CG CB CB CG1 CG1 CB CB CG2 CG2 CB CG CD1 CD1 CG CG CD2 CD2 CG CG CD CD CG CG1 CD CD CG1 CD1 CE1 CE1 CD1 CD2 CE2 CE2 CD2 CD CE CE CD C C CA CA CB CB CG CG CG1 CG1 CG2 CG2 CD CD CD1 CD1 CD2 CD2 CE CE CE1 CE1 CE2 CE2 \
 	   -s 0 \
 	   --nuc1_label 13C \
 	   --nuc2_label 13C \
